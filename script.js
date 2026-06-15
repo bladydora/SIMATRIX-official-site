@@ -118,6 +118,23 @@ const translations = {
           ],
         },
       },
+      contact: {
+        title: "联系 | SIMATRIX 共生秩序",
+        description: "联系上海共生秩序人工智能技术有限公司，了解 AI 原生组织、Agent 工作流和企业智能系统合作。",
+        hero: ["Contact", "联系", "如果你正在思考企业如何真正使用 AI、如何搭建 Agent 工作系统，或如何把 AI 接入真实业务流程，可以从这里开始。"],
+        contact: {
+          kicker: "Contact",
+          title: "联系",
+          lead: "如果你正在思考企业如何真正使用 AI、如何搭建 Agent 工作系统，或如何把 AI 接入真实业务流程，可以从这里开始。",
+          info: [
+            ["公司全称", "上海共生秩序人工智能技术有限公司"],
+            ["公司简称", "共生秩序"],
+            ["英文代号", "SIMATRIX / Symbiotic Matrix"],
+            ["合作方向", "AI 原生组织、Agent 工作流、企业工具接入、行业智能系统"],
+            ["邮箱", "dora.y@simatrix.cn"],
+          ],
+        },
+      },
     },
   },
   en: {
@@ -221,6 +238,23 @@ const translations = {
             { title: "Values", body: "Symbiosis, evolution, truth-seeking, boundary-breaking, light, and execution. We value real problems, long-term accumulation, and actions that change reality." },
           ],
         },
+        contact: {
+          kicker: "Contact",
+          title: "Contact",
+          lead: "If you are thinking about how enterprises can truly use AI, how to build Agent work systems, or how to connect AI to real business processes, start here.",
+          info: [
+            ["Company name", "Shanghai Symbiotic Matrix Artificial Intelligence Technology Co., Ltd."],
+            ["Short name", "SIMATRIX"],
+            ["English code", "SIMATRIX / Symbiotic Matrix"],
+            ["Collaboration", "AI-native organizations, Agent workflows, enterprise tool integration, industry intelligent systems"],
+            ["Email", "dora.y@simatrix.cn"],
+          ],
+        },
+      },
+      contact: {
+        title: "Contact | SIMATRIX",
+        description: "Contact Shanghai Symbiotic Matrix Artificial Intelligence Technology Co., Ltd. for AI-native organization, Agent workflow, and intelligent enterprise system collaboration.",
+        hero: ["Contact", "Contact", "If you are thinking about how enterprises can truly use AI, how to build Agent work systems, or how to connect AI to real business processes, start here."],
         contact: {
           kicker: "Contact",
           title: "Contact",
@@ -350,6 +384,23 @@ const translations = {
           ],
         },
       },
+      contact: {
+        title: "お問い合わせ | SIMATRIX 共生秩序",
+        description: "AI ネイティブ組織、Agent ワークフロー、企業知能システムについて SIMATRIX にお問い合わせください。",
+        hero: ["Contact", "お問い合わせ", "企業が AI を本当に活用する方法、Agent ワークシステムの構築、AI と実業務プロセスの接続を考えているなら、ここから始められます。"],
+        contact: {
+          kicker: "Contact",
+          title: "お問い合わせ",
+          lead: "企業が AI を本当に活用する方法、Agent ワークシステムの構築、AI と実業務プロセスの接続を考えているなら、ここから始められます。",
+          info: [
+            ["会社名", "上海共生秩序人工知能技術有限公司"],
+            ["略称", "共生秩序"],
+            ["英語コード", "SIMATRIX / Symbiotic Matrix"],
+            ["協業領域", "AI ネイティブ組織、Agent ワークフロー、企業ツール接続、産業知能システム"],
+            ["メール", "dora.y@simatrix.cn"],
+          ],
+        },
+      },
     },
   },
   ko: {
@@ -466,6 +517,23 @@ const translations = {
           ],
         },
       },
+      contact: {
+        title: "문의 | SIMATRIX 공생 질서",
+        description: "AI 네이티브 조직, Agent 워크플로, 기업 지능 시스템 협업을 위해 SIMATRIX에 문의하세요.",
+        hero: ["Contact", "문의", "기업이 AI를 실제로 어떻게 사용할지, Agent 업무 시스템을 어떻게 구축할지, AI를 실제 업무 프로세스에 어떻게 연결할지 고민하고 있다면 여기서 시작할 수 있습니다."],
+        contact: {
+          kicker: "Contact",
+          title: "문의",
+          lead: "기업이 AI를 실제로 어떻게 사용할지, Agent 업무 시스템을 어떻게 구축할지, AI를 실제 업무 프로세스에 어떻게 연결할지 고민하고 있다면 여기서 시작할 수 있습니다.",
+          info: [
+            ["회사명", "상하이 공생질서 인공지능 기술 유한회사"],
+            ["약칭", "공생 질서"],
+            ["영문 코드", "SIMATRIX / Symbiotic Matrix"],
+            ["협업 방향", "AI 네이티브 조직, Agent 워크플로, 기업 도구 연결, 산업 지능 시스템"],
+            ["이메일", "dora.y@simatrix.cn"],
+          ],
+        },
+      },
     },
   },
 };
@@ -498,6 +566,7 @@ const getPageKey = () => {
   if (fileName === "capabilities.html") return "capabilities";
   if (fileName === "work.html") return "work";
   if (fileName === "about.html") return "about";
+  if (fileName === "contact.html") return "contact";
   return "home";
 };
 
@@ -567,7 +636,7 @@ const setContactInfo = (info) => {
 const setCommon = (languagePack) => {
   const { common } = languagePack;
   setText(".brand-name span", common.brandSubtitle);
-  [".nav-links > a[href='index.html']", ".nav-links > a[href='capabilities.html']", ".nav-links > a[href='work.html']", ".nav-links > a[href='about.html#about']", ".nav-links > a[href='about.html#contact']"].forEach((selector, index) => {
+  [".nav-links > a[href='index.html']", ".nav-links > a[href='capabilities.html']", ".nav-links > a[href='work.html']", ".nav-links > a[href='about.html']", ".nav-links > a[href='contact.html']"].forEach((selector, index) => {
     setText(selector, common.nav[index]);
   });
   setText(".site-footer .footer-inner span:first-child", common.footerCopyright);
@@ -625,21 +694,16 @@ const setAbout = (page) => {
   setText("#about h2", page.about.title);
   setText("#about .section-lead", page.about.lead);
   setCards("#about .grid-3 .card", page.about.cards);
+};
+
+const setContact = (page) => {
+  setText(".page-hero .eyebrow", page.hero[0]);
+  setText(".page-hero h1", page.hero[1]);
+  setText(".page-hero p", page.hero[2]);
   setText("#contact .section-kicker", page.contact.kicker);
   setText("#contact h2", page.contact.title);
   setText("#contact .section-lead", page.contact.lead);
   setContactInfo(page.contact.info);
-};
-
-const setAboutNavState = () => {
-  if (!navLinks || !location.pathname.endsWith("about.html")) {
-    return;
-  }
-
-  const activeHref = location.hash === "#contact" ? "about.html#contact" : "about.html#about";
-  navLinks.querySelectorAll("a").forEach((link) => {
-    link.classList.toggle("active", link.getAttribute("href") === activeHref);
-  });
 };
 
 const applyTranslations = (language) => {
@@ -651,15 +715,15 @@ const applyTranslations = (language) => {
   if (!page) return;
   setMeta(page, languagePack);
   setCommon(languagePack);
-  document.querySelectorAll(".lang-switch button").forEach((button) => {
-    button.classList.toggle("active", button.dataset.lang === safeLanguage);
+  document.querySelectorAll(".lang-switch select").forEach((select) => {
+    select.value = safeLanguage;
   });
 
   if (pageKey === "home") setHome(page);
   if (pageKey === "capabilities") setCapabilities(page);
   if (pageKey === "work") setWork(page);
   if (pageKey === "about") setAbout(page);
-  setAboutNavState();
+  if (pageKey === "contact") setContact(page);
 };
 
 const setLanguage = (language) => {
@@ -672,9 +736,8 @@ const setLanguage = (language) => {
   }
 };
 
-document.querySelectorAll(".lang-switch button").forEach((button) => {
-  button.addEventListener("click", () => setLanguage(button.dataset.lang));
+document.querySelectorAll(".lang-switch select").forEach((select) => {
+  select.addEventListener("change", () => setLanguage(select.value));
 });
 
 applyTranslations(getStoredLanguage() || "zh");
-window.addEventListener("hashchange", setAboutNavState);
