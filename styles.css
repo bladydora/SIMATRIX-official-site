@@ -1,0 +1,582 @@
+:root {
+  color-scheme: dark;
+  --bg: #050607;
+  --bg-soft: #0d1113;
+  --panel: #11171a;
+  --panel-line: #263036;
+  --text: #f4f7f7;
+  --muted: #aab5b8;
+  --subtle: #7d8b90;
+  --cyan: #45e0d3;
+  --silver: #d7dcde;
+  --warm: #c7bba4;
+  --line: rgba(255, 255, 255, 0.12);
+  --max: 1180px;
+  font-family: Inter, "SF Pro Display", "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+#about,
+#contact {
+  scroll-margin-top: 72px;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.site-header {
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: 20;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(5, 6, 7, 0.78);
+  backdrop-filter: blur(18px);
+}
+
+.nav {
+  width: min(var(--max), calc(100% - 40px));
+  margin: 0 auto;
+  min-height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+
+.brand-mark {
+  width: 38px;
+  height: 38px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.brand-name {
+  display: grid;
+  gap: 2px;
+}
+
+.brand-name strong {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.brand-name span {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.nav-links a {
+  padding: 10px 0;
+  border-bottom: 1px solid transparent;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--text);
+  border-color: var(--cyan);
+}
+
+.lang-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-left: 2px;
+}
+
+.lang-switch button {
+  min-width: 34px;
+  min-height: 30px;
+  padding: 0 9px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--muted);
+  font: inherit;
+  font-size: 12px;
+  font-weight: 650;
+  cursor: pointer;
+}
+
+.lang-switch button:hover,
+.lang-switch button.active {
+  border-color: var(--cyan);
+  background: var(--cyan);
+  color: #02110f;
+}
+
+.nav-toggle {
+  display: none;
+  width: 42px;
+  height: 42px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: transparent;
+  color: var(--text);
+  font-size: 22px;
+}
+
+.hero {
+  min-height: 92vh;
+  position: relative;
+  display: grid;
+  align-items: center;
+  overflow: hidden;
+  border-bottom: 1px solid var(--line);
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(69, 224, 211, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(69, 224, 211, 0.08) 1px, transparent 1px);
+  background-size: 72px 72px;
+  mask-image: linear-gradient(to bottom, transparent, black 18%, black 70%, transparent);
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 72px 0 0 0;
+  background:
+    linear-gradient(90deg, rgba(5, 6, 7, 0.96) 0%, rgba(5, 6, 7, 0.74) 42%, rgba(5, 6, 7, 0.96) 100%),
+    url("assets/simatrix-logo.png") center right 10% / min(560px, 58vw) no-repeat;
+  opacity: 0.92;
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 1;
+  width: min(var(--max), calc(100% - 40px));
+  margin: 88px auto 0;
+  padding: 90px 0 84px;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--cyan);
+  font-size: 14px;
+  font-weight: 650;
+}
+
+.eyebrow::before {
+  content: "";
+  width: 34px;
+  height: 1px;
+  background: var(--cyan);
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+.hero h1 {
+  margin-top: 24px;
+  max-width: 760px;
+  font-size: clamp(42px, 7vw, 88px);
+  line-height: 1.02;
+  font-weight: 760;
+}
+
+.hero-copy {
+  margin-top: 28px;
+  max-width: 680px;
+  color: var(--silver);
+  font-size: clamp(17px, 2vw, 22px);
+  line-height: 1.72;
+}
+
+.hero-actions {
+  margin-top: 38px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  padding: 0 18px;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+  font-weight: 650;
+  white-space: nowrap;
+}
+
+.button.primary {
+  background: var(--cyan);
+  border-color: var(--cyan);
+  color: #02110f;
+}
+
+.button.secondary {
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.section {
+  border-bottom: 1px solid var(--line);
+}
+
+.section-inner {
+  width: min(var(--max), calc(100% - 40px));
+  margin: 0 auto;
+  padding: 92px 0;
+}
+
+.section-head {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(280px, 1fr);
+  gap: 48px;
+  align-items: end;
+  margin-bottom: 44px;
+}
+
+.section-kicker {
+  color: var(--cyan);
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.section h2 {
+  font-size: clamp(30px, 4vw, 52px);
+  line-height: 1.12;
+}
+
+.section-lead {
+  color: var(--muted);
+  font-size: 17px;
+  line-height: 1.78;
+}
+
+.band-dark {
+  background: var(--bg-soft);
+}
+
+.grid-3,
+.grid-4,
+.grid-2 {
+  display: grid;
+  gap: 18px;
+}
+
+.grid-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.grid-4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.grid-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.card {
+  border: 1px solid var(--panel-line);
+  border-radius: 8px;
+  background: rgba(17, 23, 26, 0.84);
+  padding: 24px;
+}
+
+.card-number {
+  color: var(--cyan);
+  font-size: 13px;
+  font-weight: 760;
+  margin-bottom: 20px;
+}
+
+.card h3 {
+  font-size: 20px;
+  line-height: 1.35;
+  margin-bottom: 14px;
+}
+
+.card p,
+.card li {
+  color: var(--muted);
+  line-height: 1.72;
+  font-size: 15px;
+}
+
+.card ul {
+  margin: 0;
+  padding-left: 18px;
+}
+
+.capability-row {
+  display: grid;
+  grid-template-columns: 180px minmax(0, 1fr) minmax(260px, 0.72fr);
+  gap: 28px;
+  padding: 28px 0;
+  border-top: 1px solid var(--line);
+}
+
+.capability-row:last-child {
+  border-bottom: 1px solid var(--line);
+}
+
+.capability-row strong {
+  color: var(--cyan);
+  font-size: 14px;
+}
+
+.capability-row h3 {
+  font-size: 24px;
+}
+
+.capability-row p {
+  color: var(--muted);
+  line-height: 1.75;
+}
+
+.quote-band {
+  background: #e7ebe9;
+  color: #101516;
+}
+
+.quote-band .section-inner {
+  padding: 74px 0;
+}
+
+.quote {
+  max-width: 920px;
+  font-size: clamp(28px, 4.5vw, 58px);
+  line-height: 1.18;
+  font-weight: 760;
+}
+
+.quote-caption {
+  margin-top: 24px;
+  color: #4d5b5d;
+}
+
+.timeline {
+  display: grid;
+  gap: 0;
+  border-top: 1px solid var(--line);
+}
+
+.timeline-item {
+  display: grid;
+  grid-template-columns: 220px minmax(0, 1fr);
+  gap: 32px;
+  padding: 28px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.timeline-item span {
+  color: var(--cyan);
+  font-weight: 760;
+}
+
+.timeline-item p {
+  color: var(--muted);
+  line-height: 1.75;
+}
+
+.page-hero {
+  padding-top: 72px;
+  border-bottom: 1px solid var(--line);
+  background:
+    linear-gradient(90deg, rgba(5, 6, 7, 0.96), rgba(5, 6, 7, 0.82)),
+    url("assets/simatrix-logo.png") center right 12% / min(420px, 50vw) no-repeat;
+}
+
+.page-hero .section-inner {
+  padding: 112px 0 88px;
+}
+
+.page-hero h1 {
+  max-width: 800px;
+  font-size: clamp(38px, 6vw, 72px);
+  line-height: 1.08;
+}
+
+.page-hero p {
+  max-width: 720px;
+  margin-top: 24px;
+  color: var(--silver);
+  font-size: 19px;
+  line-height: 1.78;
+}
+
+.contact-panel {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 0.8fr);
+  gap: 36px;
+  align-items: start;
+}
+
+.info-list {
+  display: grid;
+  gap: 14px;
+}
+
+.info-line {
+  display: grid;
+  grid-template-columns: 120px minmax(0, 1fr);
+  gap: 18px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--line);
+  color: var(--muted);
+}
+
+.info-line strong {
+  color: var(--text);
+}
+
+.site-footer {
+  background: #030404;
+}
+
+.footer-inner {
+  width: min(var(--max), calc(100% - 40px));
+  margin: 0 auto;
+  padding: 40px 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  color: var(--subtle);
+  font-size: 13px;
+}
+
+@media (max-width: 900px) {
+  .nav-links {
+    position: absolute;
+    top: 72px;
+    left: 0;
+    right: 0;
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 14px 20px 20px;
+    background: rgba(5, 6, 7, 0.96);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-links a {
+    padding: 14px 0;
+  }
+
+  .lang-switch {
+    margin: 12px 0 0;
+    padding-top: 14px;
+    border-top: 1px solid var(--line);
+  }
+
+  .lang-switch button {
+    flex: 1;
+  }
+
+  .nav-toggle {
+    display: inline-grid;
+    place-items: center;
+  }
+
+  .hero::after,
+  .page-hero {
+    background:
+      linear-gradient(90deg, rgba(5, 6, 7, 0.96), rgba(5, 6, 7, 0.84)),
+      url("assets/simatrix-logo.png") center 28% / min(440px, 86vw) no-repeat;
+  }
+
+  .section-head,
+  .contact-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .grid-4,
+  .grid-3,
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
+
+  .capability-row,
+  .timeline-item {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+}
+
+@media (max-width: 560px) {
+  .nav {
+    width: min(var(--max), calc(100% - 28px));
+  }
+
+  .brand-name span {
+    display: none;
+  }
+
+  .hero-inner,
+  .section-inner,
+  .footer-inner {
+    width: min(var(--max), calc(100% - 28px));
+  }
+
+  .hero-inner {
+    padding: 72px 0 64px;
+  }
+
+  .section-inner {
+    padding: 68px 0;
+  }
+
+  .info-line {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+
+  .footer-inner {
+    flex-direction: column;
+  }
+}
