@@ -700,9 +700,6 @@ const setContact = (page) => {
   setText(".page-hero .eyebrow", page.hero[0]);
   setText(".page-hero h1", page.hero[1]);
   setText(".page-hero p", page.hero[2]);
-  setText("#contact .section-kicker", page.contact.kicker);
-  setText("#contact h2", page.contact.title);
-  setText("#contact .section-lead", page.contact.lead);
   setContactInfo(page.contact.info);
 };
 

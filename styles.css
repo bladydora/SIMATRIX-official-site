@@ -460,15 +460,14 @@ p {
 }
 
 .contact-panel {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(320px, 0.8fr);
-  gap: 36px;
-  align-items: start;
+  display: block;
 }
 
 .info-list {
   display: grid;
   gap: 14px;
+  width: min(760px, 100%);
+  margin-left: auto;
 }
 
 .info-line {
@@ -545,8 +544,7 @@ p {
       url("assets/simatrix-logo.png") center 28% / min(440px, 86vw) no-repeat;
   }
 
-  .section-head,
-  .contact-panel {
+  .section-head {
     grid-template-columns: 1fr;
   }
 
@@ -589,6 +587,10 @@ p {
   .info-line {
     grid-template-columns: 1fr;
     gap: 6px;
+  }
+
+  .info-list {
+    margin-left: 0;
   }
 
   .footer-inner {
