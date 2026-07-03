@@ -639,8 +639,8 @@ const setCommon = (languagePack) => {
   [".nav-links > a[href='index.html']", ".nav-links > a[href='capabilities.html']", ".nav-links > a[href='work.html']", ".nav-links > a[href='about.html']", ".nav-links > a[href='contact.html']"].forEach((selector, index) => {
     setText(selector, common.nav[index]);
   });
-  setText(".site-footer .footer-inner span:first-child", common.footerCopyright);
-  setText(".site-footer .footer-inner span:last-child", common.footerTagline);
+  setText(".site-footer .footer-copyright", common.footerCopyright);
+  setText(".site-footer .footer-tagline", common.footerTagline);
 };
 
 const setHome = (page) => {
